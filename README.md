@@ -24,7 +24,7 @@ pip install pygame ivy-python
 ## Fichiers principaux
 
 - `fusion.py` : Application principale pour lancer la palette multimodale
-- `ivy.ivy` : Module optionnel pour la communication Ivy (SRA5 et gestes)
+- `sra5_on` : Module pour la communication Ivy
 
 ---
 
