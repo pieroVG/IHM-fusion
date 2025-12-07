@@ -286,7 +286,7 @@ def main():
                     formes.append(forme)
 
                 # Nouvelle fonctionnalité : "créé un"
-                if "créé un" in speech or "crée un" in speech or "creer un" in speech or "creer" in speech:
+                if "créé un" in speech or "crée un" in speech or "creer un" in speech or "creer" in speech or "dessine un" in speech or "dessine" in speech:
                     etat = ETAT_ATTENTE_CREATION
                     drawing_points = []
                     creation_points = []
@@ -294,7 +294,7 @@ def main():
                     creation_forme = None
                     creation_attend_couleur = False
                     couleur_choisie = None
-                    print("Dessine la forme avec la souris...")
+                    print("Dessinez la forme avec la souris...")
 
                 # Choix couleur puis placement
                 if etat == ETAT_ATTENTE_CREATION and creation_shape_name:
@@ -304,7 +304,7 @@ def main():
                             if nom in speech:
                                 couleur_choisie = col
                                 creation_attend_couleur = False
-                                print(f"Couleur {nom} choisie. Dis 'ici' pour placer la forme.")
+                                print(f"Couleur {nom} choisie. Dites 'ici' pour placer la forme.")
                                 break
                     else:
                         # On attend le "ici"
@@ -330,7 +330,7 @@ def main():
                             print("Forme créée et placée !")
 
                 # Déplacement en 2 temps
-                if "deplace ca" in speech or "déplace ça" in speech or "des places" in speech:
+                if "deplace ca" in speech or "déplace ça" in speech or "des places" in speech or "des places ca" in speech or "des places ca" in speech or "bouge ca" in speech or "bouge" in speech:
                     if formes:
                         forme_courante = min(formes, key=lambda f: f.distance_to(current_mouse_pos))
                         couleur_originale = forme_courante.color
